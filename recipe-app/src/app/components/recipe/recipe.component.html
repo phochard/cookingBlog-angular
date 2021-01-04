@@ -1,0 +1,12 @@
+<div class="single-best-receipe-area mb-30" (click)="goToRecipe(recipeId)">
+    <img class="recipe-image" [src]="recipeImage" alt="">
+    <div class="receipe-content">
+        <button class="btn">
+            <h5>{{recipeTitle}}</h5>
+        </button>
+        <div class="ratings">
+            <i class="fa fa-star" aria-hidden="true" *ngFor="let in of counter(recipeRating)"></i>
+            <i class="far fa-star" *ngFor="let in of restCounter(recipeRating)"></i>
+        </div>
+    </div>
+</div>

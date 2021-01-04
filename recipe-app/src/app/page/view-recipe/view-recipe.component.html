@@ -1,0 +1,124 @@
+<!-- ##### Breadcumb Area Start ##### -->
+<div class="breadcumb-area bg-img bg-overlay" *ngIf="recipe" [style.background-image]="'url('+recipe.image+')'" [style.background-size]="'cover'">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12">
+                <div class="breadcumb-text text-center">
+                    <h2>Recette </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ##### Breadcumb Area End ##### -->
+
+<div class="receipe-post-area section-padding-80" *ngIf="recipe">
+
+    <!-- Receipe Content Area -->
+    <div class="receipe-content-area">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-12 col-md-8">
+                    <div class="receipe-headline my-5">
+                        <span>Le {{recipe.created | date:'dd MMMM yyyy':'UTC+3':'fr'}}</span>
+
+                        <h2>{{recipe.title}}</h2>
+                        <div class="receipe-duration">
+                            <h6>Temps de préparation : {{recipe.preparation_time}}</h6>
+                            <h6>Temps de cuisson: {{recipe.baking_time}}</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="receipe-ratings view text-right my-5">
+                        <div class="ratings">
+                            <i class="fa fa-star" *ngFor="let in of counterRating(recipe.rating)" aria-hidden="true"></i>
+                            <i class="far fa-star" *ngFor="let in of restCounterRating(recipe.rating)"></i>
+                        </div>
+                        <a href="#" class="btn indies-btn">{{recipe.level}}</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-lg-8">
+                    <!-- Single Preparation Step -->
+                    <div class="single-preparation-step d-flex" *ngFor="let step of recipe.steps">
+                        <h4>{{step.order}}.</h4>
+                        <p>{{step.content}}</p>
+                    </div>
+
+                </div>
+
+                <!-- Ingredients -->
+                <div class="col-12 col-lg-4">
+                    <div class="ingredients">
+                        <h4>Ingredients</h4>
+                        <div class="list-group">
+                            <p *ngFor="let ingredient of recipe.ingredients" class="list-group-item list-group-item-action mb-0 d-flex justify-content-between align-items-center">
+                                {{ingredient.name}} <i class="fas fa-concierge-bell"></i>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading text-left">
+                        <h3>Leave a comment</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="contact-form-area">
+                        <form action="#" method="post">
+                            <div class="row">
+
+                                <div class="col-12 col-lg-6">
+                                    <input type="text" class="form-control" id="name" placeholder="Name">
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <input type="email" class="form-control" id="email" placeholder="E-mail">
+                                </div>
+                                <div class="col-12">
+                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                </div>
+                                <div class="col-12">
+                                    <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn indies-btn mt-30" type="submit">Post Comments</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- <div class="jumbotron">
+    <h1 class="display-3">{{recipe.title}}</h1>
+    <p class="lead">{{recipe.description}}</p>
+    <hr class="my-4">
+    <h4>Liste des ingrédients</h4>
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let ingredient of recipe.ingredients">
+            <h3>{{ ingredient }}</h3>
+        </li>
+    </ul>
+    <hr class="my-4">
+    <h4>Etapes</h4>
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let step of recipe.steps">
+            <h3>{{ step }}</h3>
+        </li>
+    </ul>
+</div> -->

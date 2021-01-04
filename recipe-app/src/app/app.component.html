@@ -1,0 +1,78 @@
+<!-- Preloader -->
+<div id="preloader">
+    <i class="circle-preloader"></i>
+    <img src="../assets/img/palm.svg" class="logo" alt="">
+</div>
+
+<!-- ##### Header Area Start ##### -->
+<header class="header-area mt-5 pt-5">
+
+    <!-- Navbar Area -->
+    <div class="indies-main-menu">
+        <div class="classy-nav-container breakpoint-off">
+            <div class="container">
+                <!-- Menu -->
+                <nav class="classy-navbar justify-content-between" id="indiesNav">
+
+                    <!-- Logo -->
+                    <a class="nav-brand text-dark d-flex align-items-end" routerLink="/"><img src="../assets/img/palm.svg" class="logo mr-2" alt=""> <span>Indies</span></a>
+
+                    <!-- Navbar Toggler -->
+                    <div class="classy-navbar-toggler">
+                        <span class="navbarToggler"><span></span><span></span><span></span></span>
+                    </div>
+
+                    <!-- Menu -->
+                    <div class="classy-menu">
+
+                        <!-- close btn -->
+                        <div class="classycloseIcon">
+                            <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                        </div>
+
+                        <!-- Nav Start -->
+                        <div class="classynav">
+                            <ul>
+                                <li class="active"><a routerLink='/'>Accueil</a></li>
+
+                                <li><a routerLink="recipes">Recettes</a></li>
+                                <li><a routerLink="recipes/new">Ajouter une recette</a></li>
+                                <li><a routerLink="contact">Contact</a></li>
+                                <li><a href="#"><i class="fas fa-lock"></i> Se déconnecter</a></li>
+                            </ul>
+
+                            <!-- Newsletter Form -->
+                            <!-- <div class="search-btn">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                </div> -->
+                            <form class="searchbar">
+                                <input class="search_input" type="text" name="" placeholder="Recherche...">
+                                <a href="#" id="search" class="search_icon"><i class="fas fa-search"></i></a>
+                            </form>
+                        </div>
+                        <!-- Nav End -->
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+<router-outlet></router-outlet>
+
+<footer class="footer-area">
+    <div class="container h-100">
+        <div class="row h-100">
+            <div class="col-12 h-100 d-flex flex-wrap align-items-center justify-content-end">
+
+                <!-- Footer Logo -->
+                <div class="footer-logo">
+                    <a class="text-dark d-flex align-items-end" routerLink="/"><img src="../assets/img/palm.svg" class="logo mr-2" alt=""> <span>Indies</span></a>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</footer>
